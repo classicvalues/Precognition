@@ -9,23 +9,23 @@
     <h1>Weekly Schedule Creator</h1>
     <form action="/add_event" method="post">
         <label for="day">Day of the Week:</label>
-        <input type="text" id="day" name="day"><br><br>
+        <input type="text" id="day" name="day" required><br><br>
 
         <label for="time">Time (HH:MM):</label>
-        <input type="text" id="time" name="time"><br><br>
+        <input type="text" id="time" name="time" required><br><br>
 
         <label for="name">Event Name:</label>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name" name="name" required><br><br>
 
         <label for="duration">Duration (hours):</label>
-        <input type="text" id="duration" name="duration"><br><br>
+        <input type="number" id="duration" name="duration" required><br><br>
 
         <label for="notes">Notes:</label>
         <input type="text" id="notes" name="notes"><br><br>
 
         <label for="all_day">All Day:</label>
         <input type="radio" id="yes" name="all_day" value="yes">Yes
-        <input type="radio" id="no" name="all_day" value="no">No<br><br>
+        <input type="radio" id="no" name="all_day" value="no" checked>No<br><br>
 
         <input type="submit" value="Add Event">
     </form>

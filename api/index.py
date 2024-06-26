@@ -1,8 +1,5 @@
 from flask import Flask, request, render_template, send_file
 import os
-import tkinter as tk
-from tkinter import filedialog
-from tkinter import messagebox
 from datetime import datetime, timedelta
 from ics import Calendar, Event
 import tempfile
@@ -30,6 +27,20 @@ def add_event():
     
     add_event_to_ics(name, f"{start_date} {time}:00", duration, notes, all_day)
     return "Event added successfully!"
+
+@app.route('/save_to_file', methods=['POST'])
+def save_to_file():
+    date_str = datetime.today().strftime('%Y-%m-%d')
+    if date_str not in event_count:
+        event_count[date_str] = 0
+    event_count[date_str] += 1
+    filename = f"{date_str}_event_{event_count[date_str]}.ics"
+    folder_path = "ics_files"
+    os.makedirs(folder_path, exist_ok=True)
+    file_path = os.path.join(folder_path, filename)
+    with open(file_path, 'w') as f:
+        f.writelines(calendar)
+    return send_file(file_path, as_attachment=True, download_name=filename)
 
 def get_next_day_date(day_name):
     today = datetime.today()
@@ -60,20 +71,6 @@ def add_event_to_ics(event_name, start_time_str, duration_hours, notes, all_day)
     event.transparent = (all_day == 'yes')
 
     calendar.events.add(event)
-    save_to_file(event, start_time)
-
-def save_to_file(event, start_time):
-    date_str = start_time.strftime('%Y-%m-%d')
-    if date_str not in event_count:
-        event_count[date_str] = 0
-    event_count[date_str] += 1
-    filename = f"{date_str}_event_{event_count[date_str]}.ics"
-    folder_path = "events"
-    os.makedirs(folder_path, exist_ok=True)
-    file_path = os.path.join(folder_path, filename)
-    with open(file_path, 'w') as f:
-        f.writelines(calendar)
-    return send_file(file_path, as_attachment=True, download_name=filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
