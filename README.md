@@ -1,77 +1,73 @@
-# Nodejs Sailjs web application
+# Precognition: Your Weekly Schedule, Crafted with Pythonic Foresight
 
-Sample Nodejs Sailjs web application built on [visual studio code](https://code.visualstudio.com/).
+Welcome to Precognition!
 
-Language| Framework | Runtime | Platform | Author |
-| --------| -------- | -------- |--------|--------|
-javascript| Sailjs | node | Azure Web App| |
+This Python application, developed by ClassicValues, helps you create and manage your upcoming week's schedule with ease.
+
+## Features
+
+- **Intuitive Interface**: Schedule appointments, tasks, and events through a user-friendly app interface.
+- **Pythonic Power**: Leverage Python's automation capabilities to streamline your scheduling process.
+- **.ics File Generation**: Generate a clear .ics file compatible with popular calendar applications like Apple Calendar.
+- **Cloud Integration**: Upload the .ics file to your preferred cloud storage service for seamless synchronization across devices.
+
+## Benefits
+
+- **Reduced Stress**: Precognition eliminates manual scheduling, leaving you time to focus on important tasks.
+- **Enhanced Productivity**: Optimize your schedule and maximize your output for the week.
+- **Improved Work-Life Balance**: Gain control over your time and establish a healthy work-life balance.
 
 ## Installation
 
-For development, you will need Node.js and a node global package
+There are two ways to install Precognition:
 
-### Node
-- #### Node installation on Windows
+1. **From PyPI:**
 
-  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
-Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
+   The recommended method is to install Precognition directly from the Python Package Index (PyPI) using pip:
 
-- #### Node installation on Ubuntu
+   ```bash
+   pip install precognition
+   ```
 
-  You can install nodejs and npm easily with apt install, just run the following commands.
+2. **From Source:**
 
-      $ sudo apt install nodejs
-      $ sudo apt install npm
+   Alternatively, you can install Precognition from source by cloning this repository and running the setup script:
 
-- #### Other Operating Systems
-  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
+   ```bash
+   git clone https://github.com/ClassicValues/Precognition.git
+   cd Precognition
+   python setup.py install
+   ```
 
-If the installation was successful, you should be able to run the following command.
+## Running the Application
 
-    $ node --version
-    v8.11.3
-
-    $ npm --version
-    6.1.0
-
-If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
-
-    $ npm install npm -g
-
-## Running
-
- - #### Clone this repository  
+Once installed, you can run the application using:
 
 ```bash
-    $ git clone https://github.com/YOUR_USERNAME/REPOSITORY_NAME.git
+python -m precognition
 ```
 
-- #### Install dependencies
-```bash
-    $ cd Application
-    $ npm install -g
-```
-- #### Run Application
-```bash
-    $ cd Application
-    $ npm start
-```
-- #### Running tests
-```bash
-    $ cd Tests
-    $ npm install -g
-    $ npm test
-```
+**Use code with caution.**
 
-## Deploying on Azure
+## Customization (Optional)
 
-Any change to this repository will result in triggering a workflow to build and deploy this app on azure as an app service. Learn more about [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/) and [Github Actions](https://docs.github.com/en/actions).
+This project provides a foundation for scheduling. You can customize the application by modifying the Python code in the `app.py` file. This offers flexibility to adjust features and functionalities to your specific needs. Basic Python knowledge is recommended for customization.
+
+## Compatibility
+
+Precognition requires Python 3.x to run. It generates .ics files compatible with various calendar applications.
 
 ## Contributing
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+We welcome contributions to Precognition! Feel free to fork the repository, make changes, and submit pull requests to improve the app.
 
+## License
 
-## License:
+This project is licensed under the Apache License 2.0. Please see the `LICENSE` file for details.
 
-See [LICENSE](LICENSE).
+## Get Started and Take Control of Your Time!
+
+Precognition empowers you to manage your schedule with foresight and efficiency. Download it today and experience the power of Precognition!
+```
+
+This markdown file includes all the sections from the README formatted with appropriate headings, bullet points, code blocks, and emphasis for clarity and readability.
